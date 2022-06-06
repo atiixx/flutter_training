@@ -27,19 +27,15 @@ class _buttonviewstate extends State<ButtonView> {
           children: <Widget>[
             ElevatedButton(
               onPressed: () {
-                setState(() {
-                  pressed = !pressed;
-                });
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const ColorScrollView()),
                 );
               },
-              child: const Text("Zur Scrollview"),
-              style: pressed
-                  ? ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.lightGreen), textStyle: MaterialStateProperty.all(Colors.white))
-                  : ButtonStyle(backgroundColor: MaterialStateProperty.all<Color>(Colors.green)),
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.lightGreen),
+              ),
+              child: const Text("Zur Scrollview", style: TextStyle(color: Colors.white)),
             ),
             ElevatedButton(
               onPressed: null,
